@@ -84,7 +84,7 @@ showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
-  true); // Explicitely setting the flag to get JSON from server processed into an object literal
+  true); // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -104,7 +104,6 @@ function buildAndShowHomeHTML (categories) {
       // var chosenCategoryShortName = ....
       var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
 
-
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
       // Look through this code for an example of how to do use the insertProperty function.
@@ -117,19 +116,20 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-      chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
-
+      chosenCategoryShortName2 = "'" + chosenCategoryShortName + "'";
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName2);
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-      insertHtml('#main-content', homeHtmlToInsertIntoMainPage);
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
+
+
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
